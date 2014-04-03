@@ -263,7 +263,7 @@ a {
   }
   &.btn-small {
     background-position: -16px 0;
-    height: 39px;
+    height: 40px;
     line-height: 34px;
     font-size: 11px;
     &:before {
@@ -439,9 +439,7 @@ a {
   padding: 10px 40px 24px;
   width: 415px;
   border-radius: 8px;
-  background: #e7e1d5 url("../img/form-2.png");
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+  background: #e7e1d5 url("../img/form");
   h3 {
     line-height: 1;
     margin: 24px 0;
@@ -543,9 +541,9 @@ h2 {
   position: relative;
   &:before {
     content: '';
-    background: url("../img/wave-white.png") center -1px;
+    background: url("../img/wave-white.png") center top;
     display: block;
-    height: 14px;
+    height: 15px;
   }
 }
 .wave-white-bottom {
@@ -592,7 +590,7 @@ h2 {
   box-sizing: border-box;
   padding: 1px 0;
   position: relative;
-  //margin: 15px 0 16px;
+  margin: 15px 0 16px;
   color: white;
   &:before {
     content: "";
@@ -654,21 +652,9 @@ h2 {
 }
 
 .b-simple {
-  background: #aa6b38 url("../img/b-simple.jpg") center top;
+  background: #aa6b38;
   color: white;
-  height: 478px;
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    background: url("../img/b-simple-bottom.png") no-repeat bottom center;
-    height: 16px;
-    top: 100%;
-    left: 50%;
-    margin-left: -1000px;
-    width: 2000px;
-  }
+  height: 482px;
   h2 {
     margin-top: 150px;
     text-align: center;
@@ -706,6 +692,7 @@ footer[role="contentinfo"] {
     bottom: 100%;
   }
   .site-contacts {
+    //font-size: 40px;
   }
   .site-logo {
     padding-left: 130px;
@@ -713,10 +700,5 @@ footer[role="contentinfo"] {
     font-family: @ptsans;
     font-weight: bold;
     font-size: 26px;
-    position: relative;
-    img {
-      left: 0;
-      position: absolute;
-    }
   }
 }
