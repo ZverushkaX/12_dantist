@@ -26,6 +26,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <div class="overflow">
   <header role="banner">
     <div class="wrap clr-fix">
       <div class="site-logo left">
@@ -39,7 +40,7 @@
         <a href="#modal-call" class="btn btn-small btn-blue popup">Заказать обратный звонок с сайта <i class="icon icon-phone"></i></a>
 
         <div class="text-center">
-          <a href="#" class="address"><i class="icon icon-address"></i>Ижевск, ул. Холмогорова, 37а</a>
+          <a href="#map" class="scrollto address"><i class="icon icon-address"></i>Ижевск, ул. Холмогорова, 37а</a>
         </div>
       </div>
     </div>
@@ -72,36 +73,34 @@
   <!-- /.b-intro -->
 
 
-  <div class="overflow-b-blue-wave">
-    <div class="b-blue-wave">
-      <div class="wrap">
-        <ul class="list-circles">
-          <li>Бесплатная<br>
-            консультация<br>
-             высококвалифициро- <br>
-            ванными врачами<br>
-            без очередей
-          </li>
-          <li>
-            Наши врачи —<br>
-            профессора и доценты<br>
-             стоматологической кафедры <br>
-             обучающие стоматологов <br>
-            УР и Приволжья
-          </li>
-          <li>
-            Вы не переплачиваете! <br>
-            Цены на все наши<br>
-            стоматологические <br>
-            услуги регулируются<br>
-             МинЗдравом РФ
-          </li>
-        </ul>
-      </div>
-      <!-- /.wrap -->
+  <div class="b-blue-wave">
+    <div class="wrap">
+      <ul class="list-circles">
+        <li>Бесплатная<br>
+          консультация<br>
+           высококвалифициро- <br>
+          ванными врачами<br>
+          без очередей
+        </li>
+        <li>
+          Наши врачи —<br>
+          профессора и доценты<br>
+           стоматологической кафедры <br>
+           обучающие стоматологов <br>
+          УР и Приволжья
+        </li>
+        <li>
+          Вы не переплачиваете! <br>
+          Цены на все наши<br>
+          стоматологические <br>
+          услуги регулируются<br>
+           МинЗдравом РФ
+        </li>
+      </ul>
     </div>
-    <!-- /.b-blue-wave -->
+    <!-- /.wrap -->
   </div>
+  <!-- /.b-blue-wave -->
 
 
   <section class="b-complex">
@@ -114,7 +113,7 @@
           <input type="text" name="phone" placeholder="Введите ваш телефон">
         </label>
         <label class="btn btn-blue">Запишитесь на бесплатную консультацию<input type="submit" value=""></label>
-        <input type="hidden" name="form-type" value="Форма 1">
+        <input type="hidden" name="form-type" value="Форма 2">
         <div class="lock">
           <i class="icon icon-lock"></i>
           Ваше контактные данные в безопасности. <br>
@@ -148,15 +147,15 @@
   <!-- /.b-simple -->
 
 
-  <div class="b-map">
-
+  <div class="b-map" id="map">
+    <script type="text/javascript" charset="utf-8" src="http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=UF3cEvqNJBSQjA_8-fP9-2DXN3gO2YQ5&width=&height="></script>
   </div>
 
 
   <footer role="contentinfo">
     <div class="wrap clr-fix">
       <div class="site-logo left">
-        <img src="" alt="">
+        <img src="img/logo2.png" height="95" width="98" alt="">
         <div class="caption">
           «СТИГМА» - федеральная <br>
           высокопрофессиональная<br>
@@ -170,6 +169,8 @@
       </div>
     </div>
   </footer>
+
+  </div>
 
   <!-- Модальные окна -->
   <form class="modal modal-call form" id="modal-call" method="post" action="contact.php" data-goal="FORM_CALL">
@@ -193,7 +194,6 @@
   <script src="js/fancybox/jquery.fancybox.pack.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-  <script src="js/jquery.countdown.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

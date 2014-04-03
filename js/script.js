@@ -1,9 +1,26 @@
 $(document).ready(function () {
+	if (!window.console) {
+		console = {
+			log: function () {}
+		};
+	}
 
 	function yaReachGoal(goal) {
 		console.log("Цель достигнута: ", goal);
 		yaCounter22945633.reachGoal(goal);
 	}
+
+	/**
+	 * Scroll to map and etc
+	 */
+
+
+	$(".scrollto").click(function () {
+		var target = $(this).attr("href");
+		$('html, body').animate({
+			scrollTop: $(target).offset().top
+		}, 1000);
+	});
 
 	var modal_call_goal_init = $("#modal-call").attr("data-goal");
 
@@ -11,10 +28,17 @@ $(document).ready(function () {
 		$("#modal-call").attr("data-goal", modal_call_goal_init);
 	}
 
+
 	$.extend($.fancybox.defaults, {
 		beforeClose: function () {
 			modal_call_reset_goal();
 		}
+	});
+
+	// ie8 fix
+	$(".ie8 label.btn").click(function () {
+		$(this).closest("form").submit();
+		return 0;
 	});
 
 
