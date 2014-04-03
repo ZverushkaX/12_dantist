@@ -2,8 +2,8 @@
 /**
  * Переменные
  */
-if (!isset($_POST['phone'])) {
-	exit();
+if (!isset($_POST['phone']) && !isset($_POST['email'])) {
+	die("Phone or email - empty");
 }
 
 $mailto = 'svchost@inbox.ru';
@@ -36,9 +36,11 @@ $ip = getIp();
 
 //taking the data from form
 
-$name = addslashes(trim($_POST['name']));
-$phone = addslashes(trim($_POST['phone']));
-$formtype = addslashes(trim($_POST['form-type']));
+$name = isset($_POST['name']) ? addslashes(trim($_POST['name'])) : null;
+$surname = isset($_POST['surname']) ? addslashes(trim($_POST['surname'])) : null;
+$phone = isset($_POST['phone']) ? addslashes(trim($_POST['phone'])) : null;
+$email = isset($_POST['email']) ? addslashes(trim($_POST['email'])) : null;
+$formtype = isset($_POST['form-type']) ? addslashes(trim($_POST['form-type'])) : null;
 // $mailFrom = addslashes(trim($_POST['mail']));
 
 //preparing mail
@@ -48,12 +50,13 @@ $headers .= "Content-type: text/html; charset=utf-8\n";
 $headers .= "Content-Transfer-Encoding: quoted-printable\n";
 $headers .= "From: $mailFrom\n";
 
-$content = 'имя: '.$name.'<br>'.
-'Телефон: '.$phone.'<br>'.
-//'Email':.$email.'<br>'.
-'Тип формы: '.$formtype.'<br>'.
-'IP: '.$ip.'<br>'.
-'Время отправки (по Москве): '.$timestamp.'<br>';
+$content = $name ? 'имя: {$name} <br>' : "";
+$content .= $surname ? 'Фамилия: {$surname} <br>' : "";
+$content .= $phone ? 'Телефон: $phone<br>' : "";
+$content .= $email ? 'Email: $email <br>' : "";
+$content .= $formtype ? 'Тип формы: $formtype<br>' : "";
+$content .= 'IP: $ip<br>';
+$content .= 'Время отправки (по Москве): $timestamp <br>';
 
 $mailTopic = $site_name." - заявка от: ".$name." тел.: ".$phone;
 
